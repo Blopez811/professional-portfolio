@@ -16,8 +16,7 @@
   ## Usage
     Go to the url for the deployed portfolio and look at my projects. https://blopez811.github.io/professional-portfolio/
 
-  ## License  
-    This application is covered under the Apache 2.0 license.
+
   ## Contributing
     There are currently no contributions needed for this project.
 
