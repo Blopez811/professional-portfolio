@@ -9,30 +9,30 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            // https://dashboard.emailjs.com/admin/integration
-            emailjs.init('user_f3aRPOtGQhPgwmyQRUmAX');
-        })();
-    </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // generate a five digit number for the contact_number variable
-                this.contact_number.value = Math.random() * 100000 | 0;
-                // these IDs from the previous steps
-                emailjs.sendForm('service_vjp0rwx', 'template_uyro45b', this)
-                    .then(function() {
+	<script type="text/javascript">
+		(function () {
+			// https://dashboard.emailjs.com/admin/integration
+			emailjs.init('user_f3aRPOtGQhPgwmyQRUmAX');
+		})();
+	</script>
+	<script type="text/javascript">
+		window.onload = function () {
+			document.getElementById('contact-form').addEventListener('submit', function (event) {
+				event.preventDefault();
+				// generate a five digit number for the contact_number variable
+				this.contact_number.value = Math.random() * 100000 | 0;
+				// these IDs from the previous steps
+				emailjs.sendForm('service_vjp0rwx', 'template_uyro45b', this)
+					.then(function () {
 						alert("Message successfully sent to benicio.lopez@gmail.com!")
-                        console.log('SUCCESS!');
-                    }, function(error) {
+						console.log('SUCCESS!');
+					}, function (error) {
 						alert("Something went wrong! Please try again.")
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
+						console.log('FAILED...', error);
+					});
+			});
+		}
+	</script>
 </head>
 
 <body class="is-preload">
@@ -44,6 +44,7 @@
 			<!-- <li><a href="#work">Work</a></li> -->
 			<li><a href="#portfolio">Portfolio</a></li>
 			<li><a href="#contact">Contact</a></li>
+			<li><a href="#technologies">Technologies</a></li>
 			<li><a href="./assets/Benicio Lopez Resume.pdf" download>Resume</a></a></li>
 		</ul>
 	</nav>
@@ -126,7 +127,7 @@
 							account.</p>
 					</article>
 				</div>
-				
+
 				<div class="col-4 col-6-medium col-12-small">
 					<article class="box style2">
 						<a href="https://polar-stream-33143.herokuapp.com/" target="_blank" class="image featured"><img
@@ -185,12 +186,22 @@
 
 	<!-- Contact -->
 	<article id="contact" class="wrapper style4">
+		
+		
+		
 		<div class="container medium">
+			
+			
+			
 			<header>
-				<h2>Send me an email.</h2>
-				<p>Fill out the form below with your name, email, and message to send me an email at benicio.lopez@gmail.com. I will respond as soon as I can. I am looking forward to hearing from you!</p>
+				<h2>Contact Me</h2>
+				<p>Fill out the form below with your name, email, and message to send me an email at
+					benicio.lopez@gmail.com. I will respond as soon as I can. I am looking forward to hearing from you!
+				</p>
 			</header>
 			<div class="row">
+
+				
 				<div class="col-12">
 					<form id="contact-form">
 						<input type="hidden" name="contact_number">
@@ -203,6 +214,24 @@
 						<input type="submit" value="Send">
 					</form>
 				</div>
+
+				<hr />
+				<div class="col-12" id="technologies">
+					<h2>Technologies </h2>
+
+					<p> MongoDB </br>
+						Express </br>
+						Node </br>
+						React </br>
+						GraphQL </br>
+						Github </br>
+						Heroku </br>
+					</p>
+				</div>
+				<hr />
+
+
+
 				<div class="col-12">
 					<hr />
 					<h3>Click below for more of my work!</h3>
