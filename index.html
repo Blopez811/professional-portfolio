@@ -7,6 +7,32 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/integration
+            emailjs.init('user_f3aRPOtGQhPgwmyQRUmAX');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_vjp0rwx', 'template_uyro45b', this)
+                    .then(function() {
+						alert("Message successfully sent to benicio.lopez@gmail.com!")
+                        console.log('SUCCESS!');
+                    }, function(error) {
+						alert("Something went wrong! Please try again.")
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 </head>
 
 <body class="is-preload">
@@ -162,20 +188,19 @@
 		<div class="container medium">
 			<header>
 				<h2>Send me an email.</h2>
-				<p>Click on the button below to send me an email and I will respond to you as soon as possible. Look
-					forward to hearing from you!</p>
+				<p>Fill out the form below with your name, email, and message to send me an email at benicio.lopez@gmail.com. I will respond as soon as I can. I am looking forward to hearing from you!</p>
 			</header>
 			<div class="row">
 				<div class="col-12">
-					<form method="post" action="mailto:benicio.lopez@gmail.com">
-						<div class="row">
-
-							<div class="col-12">
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</div>
-						</div>
+					<form id="contact-form">
+						<input type="hidden" name="contact_number">
+						<label>Name</label>
+						<input type="text" name="name">
+						<label>Email</label>
+						<input type="email" name="email">
+						<label>Message</label>
+						<textarea name="message"></textarea>
+						<input type="submit" value="Send">
 					</form>
 				</div>
 				<div class="col-12">
